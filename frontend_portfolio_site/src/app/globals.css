@@ -3,11 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-bg: #f2e9e4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent-bg: var(--accent-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,11 +18,72 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent-bg: #23233a;
   }
+}
+
+/* Smooth scrolling for nav links */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  min-height: 100dvh;
+  transition: background 0.3s, color 0.3s;
 }
+
+/* Utility classes for accent backgrounds */
+.bg-[var\(--accent-bg\)] {
+  background: var(--accent-bg) !important;
+}
+
+/* Hide scrollbars but allow scrolling (for cleaner mobile look) */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f2e9e4;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+html.dark ::-webkit-scrollbar {
+  background: #22223b;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #39395d;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #4a4e69;
+  outline-offset: 2px;
+}
+
+/* Animations for card hover */
+.group:hover .group-hover\\:scale-\\[1.04\\] {
+  transform: scale(1.04);
+}
+.group:hover .group-hover\\:grayscale-0 {
+  filter: grayscale(0);
+}
+/* Minimal fade-in for sections */
+section {
+  transition: background 0.4s, color 0.2s;
+}
+
+@media (max-width: 640px) {
+  nav {
+    font-size: 0.96rem;
+  }
+  .project-card {
+    min-width: 90vw;
+  }
+}
+

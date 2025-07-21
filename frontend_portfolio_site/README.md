@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Architect Portfolio
+
+This is a modern, minimal, and responsive architect portfolio website built with [Next.js](https://nextjs.org). The site features a multi-section single-page layout including Home, About Me, Projects (with card grid), Skills, and a styled Contact form. Design emphasizes a clean look, smooth navigation, modern fonts, subtle transitions, mobile and accessibility support.
+
+## Features
+
+- Sticky navigation bar for easy section access
+- Home section with personal/introduction blurb
+- About Me section for profile details and background
+- Projects section displaying a card grid of sample works (with images)
+- Skills section (pills)
+- Contact section with styled, accessible form (Name, Email, Subject, Message)
+- Color palette: 
+  - Primary: `#22223b`
+  - Secondary: `#4a4e69`
+  - Accent: `#f2e9e4`
+- Minimal, modern theme with focus on whitespace and subtle transitions
+- Fully responsive & keyboard accessible
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or use your preferred package manager (`yarn`, `pnpm`, `bun`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see your portfolio.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can start editing the main page by modifying `src/app/page.tsx`. The page auto-updates as you edit.
 
-## Learn More
+## .env Environment
 
-To learn more about Next.js, take a look at the following resources:
+If you want to connect the contact form to a real backend/email service, store your API endpoints/keys in a `.env` file at the project root. For example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NEXT_PUBLIC_CONTACT_API_URL=https://api.yourservice.com/send
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Reference variables in your frontend code with `process.env.NEXT_PUBLIC_*`, following Next.js conventions.
 
-## Deploy on Vercel
+## Accessibility & Mobile
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- All navigation and controls are keyboard and screen reader accessible.
+- Fully responsive layout for phones, tablets, and desktop screens.
+- Uses modern fonts and color contrast for readability.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customizing
+
+- Update your info and projects in `src/app/page.tsx`.
+- Images for projects should be placed in the `public/` folder (e.g., `public/project1.jpeg`).
+
+## Deployment
+
+Deploy your site easily on [Vercel](https://vercel.com) or another provider supporting Next.js static export.
+
+## Credits
+
+- Design and code by [Your Name], architect.
+- Built with [Next.js](https://nextjs.org).
